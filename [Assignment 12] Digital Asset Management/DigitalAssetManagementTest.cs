@@ -188,6 +188,83 @@ namespace DigitalAssetManagementTest
             drivePermission.RemovePermission(guestUser.Id, driveId: 3, permission: "ADMIN");
             Assert.IsFalse(drivePermission.HasAdminPermission(3,3));
         }
+
+        [TestMethod]
+        public void TestInviteUserToFolder()
+        {
+            User user = InitUserData();
+            User guestUser = new User
+            {
+                Name = "ChiTai",
+                Id = 3
+            };
+
+            Folder folder = new Folder { FolderId = 1,FolderName="aaa" };
+            
+
+            Drive drive = new Drive { DriveId = 3, DriveName = "DropBox" };
+            user.AddDrive(drive);
+            drive.AddFolder(folder);
+
+            var folderPermission = new FolderPermission();
+            folderPermission.Invite(guestUser.Id, folderId: 1, permission: "ADMIN");
+          
+            Assert.IsTrue(folderPermission.HasAdminPermission(3, 1));
+        }
+
+        [TestMethod]
+        public void TestRemoveUserToFolder()
+        {
+            User user = InitUserData();
+            User guestUser = new User
+            {
+                Name = "ChiTai",
+                Id = 3
+            };
+
+            Drive drive = new Drive { DriveId = 3, DriveName = "DropBox" };
+            Folder folder = new Folder { FolderId = 1, FolderName = "aaa" };
+            user.AddDrive(drive);
+            drive.AddFolder(folder);
+            var drivePermission = new DrivePermission();
+            drivePermission.Invite(guestUser.Id, folder.FolderId, permission: "ADMIN");
+
+            drivePermission.RemovePermission(guestUser.Id, folder.FolderId, permission: "ADMIN");
+            Assert.IsFalse(drivePermission.HasAdminPermission(3, 1));
+        }
+
+        [TestMethod]
+        public void TestInviteUserToFile()
+        {
+            User user = InitUserData();
+            User guestUser = new User { Name = "ChiTai", Id = 3 };
+
+            Folder folder = new Folder { FolderId = 1, FolderName = "aaa" };
+            File file = new File { FileId = 123, FileName = "document.txt" }; 
+            folder.AddFile(file); 
+
+            var filePermission = new FilePermission();
+            filePermission.Invite(guestUser.Id, file.FileId, permission: "ADMIN");
+
+            Assert.IsTrue(filePermission.HasAdminPermission(3, file.FileId)); 
+        }
+
+        [TestMethod]
+        public void TestRemoveUserToFile()
+        {
+            User user = InitUserData();
+            User guestUser = new User { Name = "ChiTai", Id = 3 };
+
+            Folder folder = new Folder { FolderId = 1, FolderName = "aaa" };
+            File file = new File { FileId = 123, FileName = "document.txt" };
+            folder.AddFile(file);
+
+            var filePermission = new FilePermission();
+            filePermission.Invite(guestUser.Id, file.FileId, permission: "ADMIN");
+
+            filePermission.RemovePermission(guestUser.Id, file.FileId, permission: "ADMIN");
+            Assert.IsFalse(filePermission.HasAdminPermission(3, file.FileId));
+        }
     }
 
     public class DrivePermission
@@ -233,6 +310,99 @@ namespace DigitalAssetManagementTest
 
         public int UserId { get; set; }
         public int DriveId { get; set; }
+        public string Permission { get; set; }
+    }
+
+    public class FolderPermission
+    {
+        public FolderPermission()
+        {
+        }
+
+        public List<FolderPermissionUser> FolderPermissionSet = new List<FolderPermissionUser>();
+
+        public void Invite(int userId, int folderId, string permission)
+        {
+            FolderPermissionSet.Add(new FolderPermissionUser() { UserId = userId, FolderId = folderId, Permission = permission });
+        }
+
+        public void RemovePermission(int userId, int folderId, string permission)
+        {
+            var permissionsToRemove = new List<FolderPermissionUser>();
+            foreach (var Permission in FolderPermissionSet)
+            {
+                if (Permission.UserId == userId && Permission.FolderId == folderId && Permission.Permission == permission)
+                {
+                    permissionsToRemove.Add(Permission);
+                }
+            }
+
+            foreach (var permissionToRemove in permissionsToRemove)
+            {
+                FolderPermissionSet.Remove(permissionToRemove);
+            }
+        }
+
+        internal bool HasAdminPermission(int userId, int folderId)
+        {
+            return FolderPermissionSet.Any(e => e.UserId == userId && e.FolderId == folderId && e.Permission == "ADMIN");
+        }
+    }
+
+    public class FolderPermissionUser
+    {
+        public FolderPermissionUser()
+        {
+        }
+
+        public int UserId { get; set; }
+        public int FolderId { get; set; }
+        public string Permission { get; set; }
+    }
+
+    public class FilePermission
+    {
+        public FilePermission()
+        {
+        }
+        public List<FilePermissionUser> FilePermissionSet = new List<FilePermissionUser>();
+
+        public void Invite(int userId, int fileId, string permission)
+        {
+            FilePermissionSet.Add(new FilePermissionUser() { UserId = userId, FileId = fileId, Permission = permission });
+        }
+
+        public void RemovePermission(int userId, int fileId, string permission)
+        {
+            var permissionsToRemove = new List<FilePermissionUser>();
+            foreach (var Permission in FilePermissionSet)
+            {
+                if (Permission.UserId == userId && Permission.FileId == fileId && Permission.Permission == permission)
+                {
+                    permissionsToRemove.Add(Permission);
+                }
+            }
+
+            foreach (var permissionToRemove in permissionsToRemove)
+            {
+                FilePermissionSet.Remove(permissionToRemove);
+            }
+        }
+
+        internal bool HasAdminPermission(int userId, int fileId)
+        {
+            return FilePermissionSet.Any(e => e.UserId == userId && e.FileId == fileId && e.Permission == "ADMIN");
+        }
+    }
+
+    public class FilePermissionUser
+    {
+        public FilePermissionUser()
+        {
+        }
+
+        public int UserId { get; set; }
+        public int FileId { get; set; }
         public string Permission { get; set; }
     }
 
