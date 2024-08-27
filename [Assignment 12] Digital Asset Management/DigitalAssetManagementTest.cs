@@ -21,8 +21,40 @@ namespace DigitalAssetManagementTest
             user.Id = 1;
 
             Assert.AreEqual("John", user.Name);
+        }
+
+        [TestMethod]
+        public void TestInitDrive()
+        {
+            var drive = new Drive();
+            drive.DriveId = 1;
+            drive.DriveName = "Job";
+
+            Assert.AreEqual("Job", drive.DriveName);
 
         }
+
+        [TestMethod]
+        public void TestInitFolder()
+        {
+            var folder = new Folder();
+            folder.FolderId = 1;
+            folder.FolderName = "abc";
+
+
+            Assert.AreEqual("abc", folder.FolderName);
+        }
+
+        [TestMethod]
+        public void TestInitFile()
+        {
+            var file = new File();
+            file.FileId = 1;
+            file.FileName = "abc.text";
+            Assert.AreEqual("abc.text", file.FileName);
+        }
+
+
         [TestMethod]
         public void TestUserCanAddDrive()
         {
@@ -252,7 +284,7 @@ namespace DigitalAssetManagementTest
         [TestMethod]
         public void TestRemoveUserToFile()
         {
-            User user = InitUserData();
+            
             User guestUser = new User { Name = "ChiTai", Id = 3 };
 
             Folder folder = new Folder { FolderId = 1, FolderName = "aaa" };
@@ -458,6 +490,7 @@ namespace DigitalAssetManagementTest
         public string Name { get; internal set; }
         public int Id { get; internal set; }
         public List<Drive> Drives { get; set; } = new List<Drive>();
+        public List<Role> roles { get; set; } = new List<Role>();
 
         public void AddDrive(Drive driveInfo)
         {
@@ -476,4 +509,19 @@ namespace DigitalAssetManagementTest
         }
     }
 
+    public class Role
+    {
+        int roleId { get; set; }
+        RoleName RoleName { get; set; }
+        public Role()
+        {
+        }
+    }
+
+    public enum RoleName
+    {
+        Admin,
+        Contributor,
+        Read
+    }
 }
