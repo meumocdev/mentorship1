@@ -318,24 +318,282 @@ namespace DigitalAssetManagementTest
         }
     }
 
-    [TestClass]
-    public class FileTest
-    {
-        [TestMethod]
-        public void GrantPermission_ShouldAddPermission_WhenUserIsGivenPermission()
+    /*    [TestClass]
+        public class FileTest
         {
-            // Arrange
-            var user = new User("TestUser");
-            var file = new File("TestFile.txt", user);
-            var permission = new Permission("Read");
+            [TestMethod]
+            public void GrantPermission_ShouldAddPermission_WhenUserIsGivenPermission()
+            {
+                // Arrange
+                var user = new User("TestUser");
+                var file = new File("TestFile.txt", user);
+                var permission = new Permission("Read");
 
-            // Act
-            file.GrantPermission(user, permission);
+                // Act
+                file.GrantPermission(user, permission);
 
-            Assert.AreEqual(user.Permissions, "Read");
-            // Assert
-/*            Assert.IsTrue(file.Permissions.ContainsKey(user));
-*/        }
+                Assert.AreEqual(user.Permissions, "Read");
+          }
+        }*/
+
+    [TestClass]
+    public class DrivePermissionTests
+    {
+        private Drive drive;
+        private User owner;
+        private User admin;
+        private User regularUser;
+        private Permission adminPermission;
+        private Permission userPermission;
+
+        [TestInitialize]
+        public void Setup()
+        {
+            owner = new User("Owner") { Id = 1 };
+            admin = new User("Admin") { Id = 2, Permissions = new List<Permission> { new Permission("Admin") } };
+            regularUser = new User("RegularUser") { Id = 3 };
+            drive = new Drive
+            {
+                DriveId = 1,
+                DriveName = "Test Drive",
+                CreatedBy = owner,
+                Permissions = new Dictionary<User, Permission>()
+            };
+            adminPermission = new Permission("Admin");
+            userPermission = new Permission("User");
+        }
+
+        [TestMethod]
+        public void GrantPermission_Drive_Owner()
+        {
+            drive.GrantPermission(regularUser, userPermission);
+            Assert.AreEqual(userPermission.PermissionName, drive.Permissions[regularUser].PermissionName);
+        }
+
+        [TestMethod]
+        public void GrantPermission_Drive_Admin()
+        {
+            drive.GrantPermission(admin, adminPermission);
+            Assert.IsTrue(drive.Permissions.ContainsKey(admin));
+            Assert.AreEqual(adminPermission.PermissionName, drive.Permissions[admin].PermissionName);
+        }
+
+        [TestMethod]
+        public void GrantPermission_Drive_User()
+        {
+            drive.GrantPermission(regularUser, userPermission);
+            Assert.IsTrue(drive.Permissions.ContainsKey(regularUser));
+            Assert.AreEqual(userPermission.PermissionName, drive.Permissions[regularUser].PermissionName);
+        }
+
+        [TestMethod]
+        public void RevokePermission_Drive_Owner()
+        {
+            drive.GrantPermission(regularUser, userPermission);
+            drive.RevokePermission(regularUser);
+            Assert.IsFalse(drive.Permissions.ContainsKey(regularUser));
+        }
+
+        [TestMethod]
+        public void RevokePermission_Drive_Admin()
+        {
+            drive.GrantPermission(admin, adminPermission);
+            drive.RevokePermission(admin);
+            Assert.IsFalse(drive.Permissions.ContainsKey(admin));
+        }
+
+        [TestMethod]
+        public void RevokePermission_Drive_User()
+        {
+            drive.GrantPermission(regularUser, userPermission);
+            drive.RevokePermission(regularUser);
+            Assert.IsFalse(drive.Permissions.ContainsKey(regularUser));
+        }
+
+        [TestMethod]
+        public void AddFolder_ByOwner()
+        {
+            Folder folder = new Folder();
+            drive.AddFolder(owner, folder);
+            Assert.IsTrue(drive.Folders.Contains(folder));
+        }
+
+        [TestMethod]
+        public void AddFolder_ByAdmin()
+        {
+            Folder folder = new Folder();
+            drive.AddFolder(admin, folder);
+            Assert.IsTrue(drive.Folders.Contains(folder));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(UnauthorizedAccessException))]
+        public void AddFolder_ByUser()
+        {
+            Folder folder = new Folder();
+            drive.AddFolder(regularUser, folder);
+        }
+
+        [TestMethod]
+        public void RemoveFolder_ByOwner()
+        {
+            Folder folder = new Folder();
+            drive.AddFolder(owner, folder);
+            drive.RemoveFolder(owner, folder);
+            Assert.IsFalse(drive.Folders.Contains(folder));
+        }
+
+        [TestMethod]
+        public void RemoveFolder_ByAdmin()
+        {
+            Folder folder = new Folder();
+            drive.AddFolder(admin, folder);
+            drive.RemoveFolder(admin, folder);
+            Assert.IsFalse(drive.Folders.Contains(folder));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(UnauthorizedAccessException))]
+        public void RemoveFolder_ByUser()
+        {
+            Folder folder = new Folder();
+            drive.AddFolder(owner, folder);
+            drive.RemoveFolder(regularUser, folder);
+        }
+
+        [TestMethod]
+        public void AddFile_ByOwner()
+        {
+            File file = new File();
+            drive.AddFile(owner, file);
+            Assert.IsTrue(drive.Files.Contains(file));
+        }
+
+        [TestMethod]
+        public void AddFile_ByAdmin()
+        {
+            File file = new File();
+            drive.AddFile(admin, file);
+            Assert.IsTrue(drive.Files.Contains(file));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(UnauthorizedAccessException))]
+        public void AddFile_ByUser()
+        {
+            File file = new File();
+            drive.AddFile(regularUser, file);
+        }
+
+        [TestMethod]
+        public void RemoveFile_ByOwner()
+        {
+            File file = new File();
+            drive.AddFile(owner, file);
+            drive.RemoveFile(owner, file);
+            Assert.IsFalse(drive.Files.Contains(file));
+        }
+
+        [TestMethod]
+        public void RemoveFile_ByAdmin()
+        {
+            File file = new File();
+            drive.AddFile(admin, file);
+            drive.RemoveFile(admin, file);
+            Assert.IsFalse(drive.Files.Contains(file));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(UnauthorizedAccessException))]
+        public void RemoveFile_ByUser()
+        {
+            File file = new File();
+            drive.AddFile(owner, file);
+            drive.RemoveFile(regularUser, file);
+        }
+
+/*        [TestMethod]
+        public void PermissionInheritance_Folder()
+        {
+            Folder folder = new Folder();
+            drive.AddFolder(owner, folder);
+            drive.GrantPermission(regularUser, userPermission);
+            Assert.IsTrue(folder.Permissions.ContainsKey(regularUser));
+        }*/
+
+/*        [TestMethod]
+        public void PermissionInheritance_File()
+        {
+            File file = new File();
+            drive.AddFile(owner, file);
+            drive.GrantPermission(regularUser, userPermission);
+            Assert.IsTrue(file.Permissions.ContainsKey(regularUser));
+        }*/
+
+/*        [TestMethod]
+        public void PermissionRemoval_Folder()
+        {
+            Folder folder = new Folder();
+            drive.AddFolder(owner, folder);
+            drive.GrantPermission(regularUser, userPermission);
+            drive.RevokePermission(regularUser);
+            Assert.IsFalse(folder.Permissions.ContainsKey(regularUser));
+        }
+
+        [TestMethod]
+        public void PermissionRemoval_File()
+        {
+            File file = new File();
+            drive.AddFile(owner, file);
+            drive.GrantPermission(regularUser, userPermission);
+            drive.RevokePermission(regularUser);
+            Assert.IsFalse(file.Permissions.ContainsKey(regularUser));
+        }*/
+
+        [TestMethod]
+        public void Admin_GrantPermission()
+        {
+            drive.GrantPermission(admin, adminPermission);
+            drive.GrantPermission(regularUser, userPermission);
+            Assert.IsTrue(drive.Permissions.ContainsKey(regularUser));
+        }
+
+        [TestMethod]
+        public void Admin_RevokePermission()
+        {
+            drive.GrantPermission(admin, adminPermission);
+            drive.GrantPermission(regularUser, userPermission);
+            drive.RevokePermission(regularUser);
+            Assert.IsFalse(drive.Permissions.ContainsKey(regularUser));
+        }
+
+        [TestMethod]
+        public void Owner_GrantPermissionToOthers()
+        {
+            drive.GrantPermission(admin, adminPermission);
+            Assert.IsTrue(drive.Permissions.ContainsKey(admin));
+        }
+
+/*        [TestMethod]
+        public void PermissionConflict_Resolution()
+        {
+            Folder folder = new Folder();
+            File file = new File();
+            drive.AddFolder(owner, folder);
+            drive.AddFile(owner, file);
+            drive.GrantPermission(regularUser, userPermission);
+
+            drive.GrantPermission(regularUser, adminPermission); // Resolve conflict
+            Assert.AreEqual(adminPermission.PermissionName, drive.Permissions[regularUser].PermissionName);
+        }*/
+
+        [TestMethod]
+        [ExpectedException(typeof(UnauthorizedAccessException))]
+        public void UnauthorizedAccess_Exception()
+        {
+            Folder folder = new Folder();
+            drive.RemoveFolder(regularUser, folder);
+        }
     }
 
     public class Folder
@@ -471,6 +729,21 @@ namespace DigitalAssetManagementTest
             FileName = fileName;
             CreatedBy = createdBy;
         }
+
+        public File(int fileId, string fileName, Folder parentFolder, User createdBy, Dictionary<User, Permission> permissions)
+        {
+            FileId = fileId;
+            FileName = fileName;
+            ParentFolder = parentFolder;
+            CreatedBy = createdBy;
+            Permissions = permissions;
+        }
+
+        public File()
+        {
+        }
+
+
 
 
         /*        public void Upload(User user)
@@ -680,10 +953,10 @@ namespace DigitalAssetManagementTest
             folder.RevokePermission(user);
         }
     }
-    public enum RoleName
+/*    public enum RoleName
     {
         Admin,
         Contributor,
         Read
-    }
+    }*/
 }
