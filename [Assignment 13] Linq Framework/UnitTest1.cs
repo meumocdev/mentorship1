@@ -1,4 +1,4 @@
-﻿namespace LinqFramework
+namespace LinqFramework
 {
     [TestClass]
     public class UnitTest1
@@ -17,17 +17,16 @@
 
             var selectedNames = LinqLikeMethods.Select(people, person => person.Name).ToList();
 
-            // Assert: Kiểm tra kết quả trả về đúng như mong đợi
             var expectedNames = new List<string> { "John", "Jane", "Doe", "Alice", "Bob" };
 
-            // Sử dụng CollectionAssert để so sánh 2 danh sách
+           
             CollectionAssert.AreEqual(expectedNames, selectedNames);
         }
 
         [TestMethod] 
         public void Where_ShouldReturnPeopleAbove30()
         {
-            // Arrange: Giả lập dữ liệu
+            // Arrange:
             var people = new List<Person>
             {
                 new Person { Id = 1, Name = "John", Age = 25 },
@@ -92,7 +91,7 @@
 
         public class LinqLikeMethods
         {
-            // Phương thức Select, tương tự như LINQ
+            // Select
             public static IEnumerable<TResult> Select<TSource, TResult>(IEnumerable<TSource> source, Func<TSource, TResult> selector)
             {
                 foreach (var item in source)
@@ -100,6 +99,8 @@
                     yield return selector(item);
                 }
             }
+
+            //Where
             public static IEnumerable<TSource> Where<TSource>(IEnumerable<TSource> source, Func<TSource, bool> predicate)
             {
                 foreach (var item in source)
@@ -112,7 +113,7 @@
             }
 
 
-            // Giả lập phương thức Count
+            // Count
             public static int Count<TSource>(IEnumerable<TSource> source)
             {
                 int count = 0;
@@ -123,7 +124,7 @@
                 return count;
             }
 
-            // Giả lập phương thức Sum
+            // Sum
             public static int Sum(IEnumerable<int> source)
             {
                 int sum = 0;
@@ -161,7 +162,6 @@
             public int Age { get; set; }
         }
 
-        // Giả lập dữ liệu
         public static class DataGenerator
         {
             public static List<Person> GetPeople()
