@@ -497,7 +497,7 @@ namespace LinqFramework
 
         }
 
-        // Select
+
 
 
         public class Person
@@ -514,19 +514,5 @@ namespace LinqFramework
             public string Product { get; set; }
         }
 
-        public static class DataGenerator
-        {
-            public static List<Person> GetPeople()
-            {
-                return new List<Person>
-            {
-                new Person { Id = 1, Name = "John", Age = 25 },
-                new Person { Id = 2, Name = "Jane", Age = 30 },
-                new Person { Id = 3, Name = "Doe", Age = 35 },
-                new Person { Id = 4, Name = "Alice", Age = 28 },
-                new Person { Id = 5, Name = "Bob", Age = 32 }
-            };
-            }
-        }
     }
 }
