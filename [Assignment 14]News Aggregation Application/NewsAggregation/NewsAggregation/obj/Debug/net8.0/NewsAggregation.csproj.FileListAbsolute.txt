@@ -1,0 +1,69 @@
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\bin\Debug\net8.0\appsettings.json
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\bin\Debug\net8.0\NewsAggregation.staticwebassets.runtime.json
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\bin\Debug\net8.0\NewsAggregation.exe
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\bin\Debug\net8.0\NewsAggregation.deps.json
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\bin\Debug\net8.0\NewsAggregation.runtimeconfig.json
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\bin\Debug\net8.0\NewsAggregation.dll
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\bin\Debug\net8.0\NewsAggregation.pdb
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\obj\Debug\net8.0\NewsAggregation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\obj\Debug\net8.0\NewsAggregation.AssemblyInfoInputs.cache
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\obj\Debug\net8.0\NewsAggregation.AssemblyInfo.cs
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\obj\Debug\net8.0\NewsAggregation.csproj.CoreCompileInputs.cache
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\obj\Debug\net8.0\NewsAggregation.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\obj\Debug\net8.0\NewsAggregation.RazorAssemblyInfo.cache
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\obj\Debug\net8.0\NewsAggregation.RazorAssemblyInfo.cs
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\obj\Debug\net8.0\staticwebassets\msbuild.NewsAggregation.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\obj\Debug\net8.0\staticwebassets\msbuild.build.NewsAggregation.props
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.NewsAggregation.props
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.NewsAggregation.props
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\obj\Debug\net8.0\scopedcss\bundle\NewsAggregation.styles.css
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\obj\Debug\net8.0\scopedcss\projectbundle\NewsAggregation.bundle.scp.css
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\obj\Debug\net8.0\NewsAggregation.dll
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\obj\Debug\net8.0\refint\NewsAggregation.dll
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\obj\Debug\net8.0\NewsAggregation.pdb
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\obj\Debug\net8.0\NewsAggregation.genruntimeconfig.cache
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\obj\Debug\net8.0\ref\NewsAggregation.dll
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\obj\Debug\net8.0\NewsAggregation.csproj.AssemblyReference.cache
+C:\Users\THANH TAI\Desktop\NewsAggregation\NewsAggregation\obj\Debug\net8.0\NewsAggr.2F8A0A52.Up2Date
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\bin\Debug\net8.0\appsettings.json
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\bin\Debug\net8.0\NewsAggregation.staticwebassets.runtime.json
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\bin\Debug\net8.0\NewsAggregation.exe
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\bin\Debug\net8.0\NewsAggregation.deps.json
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\bin\Debug\net8.0\NewsAggregation.runtimeconfig.json
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\bin\Debug\net8.0\NewsAggregation.dll
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\bin\Debug\net8.0\NewsAggregation.pdb
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\obj\Debug\net8.0\NewsAggregation.csproj.AssemblyReference.cache
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\obj\Debug\net8.0\NewsAggregation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\obj\Debug\net8.0\NewsAggregation.AssemblyInfoInputs.cache
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\obj\Debug\net8.0\NewsAggregation.AssemblyInfo.cs
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\obj\Debug\net8.0\NewsAggregation.csproj.CoreCompileInputs.cache
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\obj\Debug\net8.0\NewsAggregation.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\obj\Debug\net8.0\NewsAggregation.RazorAssemblyInfo.cache
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\obj\Debug\net8.0\NewsAggregation.RazorAssemblyInfo.cs
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\obj\Debug\net8.0\NewsAggregation.sourcelink.json
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\obj\Debug\net8.0\staticwebassets\msbuild.NewsAggregation.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\obj\Debug\net8.0\staticwebassets\msbuild.build.NewsAggregation.props
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.NewsAggregation.props
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.NewsAggregation.props
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\obj\Debug\net8.0\scopedcss\bundle\NewsAggregation.styles.css
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\obj\Debug\net8.0\scopedcss\projectbundle\NewsAggregation.bundle.scp.css
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\obj\Debug\net8.0\NewsAggr.2F8A0A52.Up2Date
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\obj\Debug\net8.0\NewsAggregation.dll
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\obj\Debug\net8.0\refint\NewsAggregation.dll
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\obj\Debug\net8.0\NewsAggregation.pdb
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\obj\Debug\net8.0\NewsAggregation.genruntimeconfig.cache
+C:\Users\THANH TAI\Desktop\Mentorship_Program\mentorship1\[Assignment 14]News Aggregation Application\NewsAggregation\NewsAggregation\obj\Debug\net8.0\ref\NewsAggregation.dll
