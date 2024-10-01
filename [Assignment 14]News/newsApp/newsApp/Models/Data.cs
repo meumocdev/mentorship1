@@ -1,11 +1,11 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
 namespace newsApp.Models
 {
-    public class User
+    public partial class User
     {
         public int UserID { get; set; }
         public string Username { get; set; }
@@ -18,7 +18,7 @@ namespace newsApp.Models
         public DateTime Last_Login { get; set; }
     }
 
-    public class News
+    public partial class News
     {
         public int NewsID { get; set; }
         public string Title { get; set; }
@@ -36,7 +36,6 @@ namespace newsApp.Models
         public int SourceID { get; set; }
         public string Status { get; set; }
 
-        // Navigation properties
         public virtual Category Category { get; set; }
         public virtual RSS Source { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
@@ -44,7 +43,7 @@ namespace newsApp.Models
         public virtual ICollection<View> ViewsCollection { get; set; }
     }
 
-    public class RSS
+    public partial class RSS
     {
         public int SourceID { get; set; }
         public string SourceName { get; set; }
@@ -56,11 +55,10 @@ namespace newsApp.Models
         public string Language { get; set; }
         public string Country { get; set; }
 
-        // Navigation property
         public virtual ICollection<News> News { get; set; }
     }
 
-    public class Category
+    public partial class Category
     {
         public int CategoryID { get; set; }
         public string CategoryName { get; set; }
@@ -68,11 +66,10 @@ namespace newsApp.Models
         public DateTime Created_At { get; set; }
         public DateTime Updated_At { get; set; }
 
-        // Navigation property
         public virtual ICollection<News> News { get; set; }
     }
 
-    public class Comment
+    public partial class Comment
     {
         public int CommentID { get; set; }
         public int UserID { get; set; }
@@ -83,24 +80,22 @@ namespace newsApp.Models
         public int Likes { get; set; }
         public string Status { get; set; }
 
-        // Navigation properties
         public virtual User User { get; set; }
         public virtual News News { get; set; }
     }
 
-    public class Like
+    public partial class Like
     {
         public int LikeID { get; set; }
         public int UserID { get; set; }
         public int NewsID { get; set; }
         public DateTime Liked_At { get; set; }
 
-        // Navigation properties
         public virtual User User { get; set; }
         public virtual News News { get; set; }
     }
 
-    public class View
+    public partial class View
     {
         public int ViewID { get; set; }
         public int UserID { get; set; }
@@ -108,12 +103,11 @@ namespace newsApp.Models
         public DateTime Viewed_At { get; set; }
         public string IP_Address { get; set; }
 
-        // Navigation properties
         public virtual User User { get; set; }
         public virtual News News { get; set; }
     }
 
-    public class Notification
+    public partial class Notification
     {
         public int NotificationID { get; set; }
         public int UserID { get; set; }
@@ -122,7 +116,6 @@ namespace newsApp.Models
         public bool Is_Read { get; set; }
         public DateTime Created_At { get; set; }
 
-        // Navigation property
         public virtual User User { get; set; }
     }
-}
+}*/

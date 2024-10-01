@@ -50,6 +50,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -175,9 +177,48 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Category.cs">
+      <DependentUpon>newsaggregationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Comment.cs">
+      <DependentUpon>newsaggregationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Data.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Like.cs">
+      <DependentUpon>newsaggregationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\News.cs">
+      <DependentUpon>newsaggregationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\newsaggregationModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>newsaggregationModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\newsaggregationModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>newsaggregationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\newsaggregationModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>newsaggregationModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Notification.cs">
+      <DependentUpon>newsaggregationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RSS.cs">
+      <DependentUpon>newsaggregationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>newsaggregationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\View.cs">
+      <DependentUpon>newsaggregationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -201,12 +242,29 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\newsaggregationModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>newsaggregationModel.edmx</DependentUpon>
+      <LastGenOutput>newsaggregationModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\newsaggregationModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>newsaggregationModel.edmx</DependentUpon>
+      <LastGenOutput>newsaggregationModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\newsaggregationModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>newsaggregationModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\newsaggregationModel.edmx.diagram">
+      <DependentUpon>newsaggregationModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.7.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -282,6 +340,9 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.7.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

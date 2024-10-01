@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="newsaggregationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="1" />
+    <Property Name="Description" Type="text" />
+    <Property Name="Created_At" Type="datetime" />
+    <Property Name="Updated_At" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Comments">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="NewsID" Type="int" />
+    <Property Name="Content" Type="text" />
+    <Property Name="Created_At" Type="datetime" />
+    <Property Name="Updated_At" Type="datetime" />
+    <Property Name="Likes" Type="int" />
+    <Property Name="Status" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Likes">
+    <Key>
+      <PropertyRef Name="LikeID" />
+    </Key>
+    <Property Name="LikeID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="NewsID" Type="int" />
+    <Property Name="Liked_At" Type="datetime" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="NewsID" />
+    </Key>
+    <Property Name="NewsID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="1" />
+    <Property Name="Description" Type="text" />
+    <Property Name="Tag" Type="nvarchar" MaxLength="1" />
+    <Property Name="Created_At" Type="datetime" />
+    <Property Name="Updated_At" Type="datetime" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="Author" Type="nvarchar" MaxLength="1" />
+    <Property Name="Image_URL" Type="nvarchar" MaxLength="1" />
+    <Property Name="Language" Type="nvarchar" MaxLength="1" />
+    <Property Name="Content" Type="text" />
+    <Property Name="Views" Type="int" />
+    <Property Name="Likes" Type="int" />
+    <Property Name="SourceID" Type="int" />
+    <Property Name="Status" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Notification">
+    <Key>
+      <PropertyRef Name="NotificationID" />
+    </Key>
+    <Property Name="NotificationID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Type" Type="nvarchar" MaxLength="1" />
+    <Property Name="Message" Type="nvarchar" MaxLength="1" />
+    <Property Name="Is_Read" Type="bit" />
+    <Property Name="Created_At" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RSS">
+    <Key>
+      <PropertyRef Name="SourceID" />
+    </Key>
+    <Property Name="SourceID" Type="int" Nullable="false" />
+    <Property Name="SourceName" Type="nvarchar" MaxLength="1" />
+    <Property Name="URL" Type="nvarchar" MaxLength="1" />
+    <Property Name="Fetch_Interval" Type="int" />
+    <Property Name="Created_At" Type="datetime" />
+    <Property Name="Updated_At" Type="datetime" />
+    <Property Name="Status" Type="nvarchar" MaxLength="1" />
+    <Property Name="Language" Type="nvarchar" MaxLength="1" />
+    <Property Name="Country" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="1" />
+    <Property Name="UserPassword" Type="nvarchar" MaxLength="1" />
+    <Property Name="Email" Type="nvarchar" MaxLength="1" />
+    <Property Name="Role" Type="nvarchar" MaxLength="1" />
+    <Property Name="Preferences" Type="nvarchar" MaxLength="1" />
+    <Property Name="Created_At" Type="datetime" />
+    <Property Name="Updated_At" Type="datetime" />
+    <Property Name="Last_Login" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Views">
+    <Key>
+      <PropertyRef Name="ViewID" />
+    </Key>
+    <Property Name="ViewID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="NewsID" Type="int" />
+    <Property Name="Viewed_At" Type="datetime" />
+    <Property Name="IP_Address" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <Association Name="FK__Comments__NewsID__49C3F6B7">
+    <End Role="News" Type="Self.News" Multiplicity="0..1" />
+    <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="News">
+        <PropertyRef Name="NewsID" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="NewsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comments__UserID__48CFD27E">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Likes__NewsID__4BAC3F29">
+    <End Role="News" Type="Self.News" Multiplicity="0..1" />
+    <End Role="Likes" Type="Self.Likes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="News">
+        <PropertyRef Name="NewsID" />
+      </Principal>
+      <Dependent Role="Likes">
+        <PropertyRef Name="NewsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Likes__UserID__4AB81AF0">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Likes" Type="Self.Likes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Likes">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__News__CategoryID__46E78A0C">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="News" Type="Self.News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__News__SourceID__47DBAE45">
+    <End Role="RSS" Type="Self.RSS" Multiplicity="0..1" />
+    <End Role="News" Type="Self.News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RSS">
+        <PropertyRef Name="SourceID" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="SourceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Notificat__UserI__4E88ABD4">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Notification" Type="Self.Notification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Notification">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Views__NewsID__4D94879B">
+    <End Role="News" Type="Self.News" Multiplicity="0..1" />
+    <End Role="Views" Type="Self.Views" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="News">
+        <PropertyRef Name="NewsID" />
+      </Principal>
+      <Dependent Role="Views">
+        <PropertyRef Name="NewsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Views__UserID__4CA06362">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Views" Type="Self.Views" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Views">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="newsaggregationModelStoreContainer">
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comments" EntityType="Self.Comments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Likes" EntityType="Self.Likes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Notification" EntityType="Self.Notification" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RSS" EntityType="Self.RSS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Views" EntityType="Self.Views" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Comments__NewsID__49C3F6B7" Association="Self.FK__Comments__NewsID__49C3F6B7">
+      <End Role="News" EntitySet="News" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comments__UserID__48CFD27E" Association="Self.FK__Comments__UserID__48CFD27E">
+      <End Role="User" EntitySet="User" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Likes__NewsID__4BAC3F29" Association="Self.FK__Likes__NewsID__4BAC3F29">
+      <End Role="News" EntitySet="News" />
+      <End Role="Likes" EntitySet="Likes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Likes__UserID__4AB81AF0" Association="Self.FK__Likes__UserID__4AB81AF0">
+      <End Role="User" EntitySet="User" />
+      <End Role="Likes" EntitySet="Likes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__News__CategoryID__46E78A0C" Association="Self.FK__News__CategoryID__46E78A0C">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK__News__SourceID__47DBAE45" Association="Self.FK__News__SourceID__47DBAE45">
+      <End Role="RSS" EntitySet="RSS" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Notificat__UserI__4E88ABD4" Association="Self.FK__Notificat__UserI__4E88ABD4">
+      <End Role="User" EntitySet="User" />
+      <End Role="Notification" EntitySet="Notification" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Views__NewsID__4D94879B" Association="Self.FK__Views__NewsID__4D94879B">
+      <End Role="News" EntitySet="News" />
+      <End Role="Views" EntitySet="Views" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Views__UserID__4CA06362" Association="Self.FK__Views__UserID__4CA06362">
+      <End Role="User" EntitySet="User" />
+      <End Role="Views" EntitySet="Views" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

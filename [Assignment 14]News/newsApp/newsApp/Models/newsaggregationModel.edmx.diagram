@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="11d2614987a74eb184ad0e74d7769cba" Name="Diagram1">
+        <EntityTypeShape EntityType="newsaggregationModel.Category" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="newsaggregationModel.Comment" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="newsaggregationModel.Like" Width="1.5" PointX="8.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="newsaggregationModel.News" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="newsaggregationModel.Notification" Width="1.5" PointX="8.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="newsaggregationModel.RSS" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="newsaggregationModel.User" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="newsaggregationModel.View" Width="1.5" PointX="8.25" PointY="2.375" IsExpanded="true" />
+        <AssociationConnector Association="newsaggregationModel.FK__News__CategoryID__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="newsaggregationModel.FK__Comments__NewsID__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="newsaggregationModel.FK__Comments__UserID__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="newsaggregationModel.FK__Likes__NewsID__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="newsaggregationModel.FK__Likes__UserID__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="newsaggregationModel.FK__News__SourceID__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="newsaggregationModel.FK__Views__NewsID__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="newsaggregationModel.FK__Notificat__UserI__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="newsaggregationModel.FK__Views__UserID__4CA06362" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
