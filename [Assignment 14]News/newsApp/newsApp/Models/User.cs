@@ -21,6 +21,8 @@ namespace newsApp.Models
             this.Likes = new HashSet<Like>();
             this.Notifications = new HashSet<Notification>();
             this.Views = new HashSet<View>();
+            this.UserActivityLogs = new HashSet<UserActivityLog>();
+            this.UserPreferences = new HashSet<UserPreference>();
         }
     
         public int UserID { get; set; }
@@ -41,5 +43,9 @@ namespace newsApp.Models
         public virtual ICollection<Notification> Notifications { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<View> Views { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserActivityLog> UserActivityLogs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserPreference> UserPreferences { get; set; }
     }
 }

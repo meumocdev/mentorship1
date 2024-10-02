@@ -22,6 +22,10 @@
         <AssociationConnector Association="newsaggregationModel.FK__Views__NewsID__4D94879B" ManuallyRouted="false" />
         <AssociationConnector Association="newsaggregationModel.FK__Notificat__UserI__4E88ABD4" ManuallyRouted="false" />
         <AssociationConnector Association="newsaggregationModel.FK__Views__UserID__4CA06362" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="newsaggregationModel.UserActivityLog" Width="1.5" PointX="8.25" PointY="11.875" />
+        <EntityTypeShape EntityType="newsaggregationModel.UserPreference" Width="1.5" PointX="8.25" PointY="14.75" />
+        <AssociationConnector Association="newsaggregationModel.FK__UserActiv__UserI__5FB337D6" />
+        <AssociationConnector Association="newsaggregationModel.FK__UserPrefe__UserI__5EBF139D" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
