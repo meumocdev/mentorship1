@@ -81,12 +81,8 @@
     <Property Name="SourceID" Type="Int32" Nullable="false" />
     <Property Name="SourceName" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
     <Property Name="URL" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
-    <Property Name="Fetch_Interval" Type="Int32" />
     <Property Name="Created_At" Type="DateTime" Precision="3" />
     <Property Name="Updated_At" Type="DateTime" Precision="3" />
-    <Property Name="Status" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
-    <Property Name="Language" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
-    <Property Name="Country" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="News" Relationship="Self.FK__News__SourceID__47DBAE45" FromRole="RSS" ToRole="News" />
   </EntityType>
   <EntityType Name="User">
@@ -106,6 +102,8 @@
     <NavigationProperty Name="Likes" Relationship="Self.FK__Likes__UserID__4AB81AF0" FromRole="User" ToRole="Likes" />
     <NavigationProperty Name="Notifications" Relationship="Self.FK__Notificat__UserI__4E88ABD4" FromRole="User" ToRole="Notification" />
     <NavigationProperty Name="Views" Relationship="Self.FK__Views__UserID__4CA06362" FromRole="User" ToRole="Views" />
+    <NavigationProperty Name="UserActivityLogs" Relationship="newsaggregationModel.FK__UserActiv__UserI__5FB337D6" FromRole="User" ToRole="UserActivityLog" />
+    <NavigationProperty Name="UserPreferences" Relationship="newsaggregationModel.FK__UserPrefe__UserI__5EBF139D" FromRole="User" ToRole="UserPreference" />
   </EntityType>
   <EntityType Name="View">
     <Key>
@@ -272,5 +270,73 @@
       <End Role="User" EntitySet="Users" />
       <End Role="Views" EntitySet="Views" />
     </AssociationSet>
+    <EntitySet Name="UserActivityLogs" EntityType="newsaggregationModel.UserActivityLog" />
+    <EntitySet Name="UserPreferences" EntityType="newsaggregationModel.UserPreference" />
+    <AssociationSet Name="FK__UserActiv__UserI__5FB337D6" Association="newsaggregationModel.FK__UserActiv__UserI__5FB337D6">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserActivityLog" EntitySet="UserActivityLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserPrefe__UserI__5EBF139D" Association="newsaggregationModel.FK__UserPrefe__UserI__5EBF139D">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserPreference" EntitySet="UserPreferences" />
+    </AssociationSet>
+    <EntitySet Name="sysdiagrams" EntityType="newsaggregationModel.sysdiagram" />
   </EntityContainer>
+  <EntityType Name="UserActivityLog">
+    <Key>
+      <PropertyRef Name="ActivityID" />
+    </Key>
+    <Property Name="ActivityID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="Activity_Type" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Created_At" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="User" Relationship="newsaggregationModel.FK__UserActiv__UserI__5FB337D6" FromRole="UserActivityLog" ToRole="User" />
+  </EntityType>
+  <EntityType Name="UserPreference">
+    <Key>
+      <PropertyRef Name="PreferenceID" />
+    </Key>
+    <Property Name="PreferenceID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="Preferred_Categories" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Preferred_Languages" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Created_At" Type="DateTime" Precision="3" />
+    <Property Name="Updated_At" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="User" Relationship="newsaggregationModel.FK__UserPrefe__UserI__5EBF139D" FromRole="UserPreference" ToRole="User" />
+  </EntityType>
+  <Association Name="FK__UserActiv__UserI__5FB337D6">
+    <End Type="newsaggregationModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="newsaggregationModel.UserActivityLog" Role="UserActivityLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="UserActivityLog">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserPrefe__UserI__5EBF139D">
+    <End Type="newsaggregationModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="newsaggregationModel.UserPreference" Role="UserPreference" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="UserPreference">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
 </Schema>

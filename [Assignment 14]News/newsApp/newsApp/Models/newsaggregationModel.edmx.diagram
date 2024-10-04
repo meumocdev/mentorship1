@@ -26,6 +26,7 @@
         <EntityTypeShape EntityType="newsaggregationModel.UserPreference" Width="1.5" PointX="8.25" PointY="14.75" />
         <AssociationConnector Association="newsaggregationModel.FK__UserActiv__UserI__5FB337D6" />
         <AssociationConnector Association="newsaggregationModel.FK__UserPrefe__UserI__5EBF139D" />
+        <EntityTypeShape EntityType="newsaggregationModel.sysdiagram" Width="1.5" PointX="5.375" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

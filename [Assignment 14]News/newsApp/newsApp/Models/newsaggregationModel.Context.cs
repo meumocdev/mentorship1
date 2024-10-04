@@ -33,5 +33,8 @@ namespace newsApp.Models
         public virtual DbSet<RSS> RSSes { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<View> Views { get; set; }
+        public virtual DbSet<UserActivityLog> UserActivityLogs { get; set; }
+        public virtual DbSet<UserPreference> UserPreferences { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

@@ -23,12 +23,8 @@ namespace newsApp.Models
         public int SourceID { get; set; }
         public string SourceName { get; set; }
         public string URL { get; set; }
-        public Nullable<int> Fetch_Interval { get; set; }
         public Nullable<System.DateTime> Created_At { get; set; }
         public Nullable<System.DateTime> Updated_At { get; set; }
-        public string Status { get; set; }
-        public string Language { get; set; }
-        public string Country { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<News> News { get; set; }
