@@ -12,21 +12,22 @@ namespace newsApp.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class RSS
+    public partial class Tag
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public RSS()
+        public Tag()
         {
-            this.News = new HashSet<News>();
+            this.NewTags = new HashSet<NewTag>();
+            this.UserTags = new HashSet<UserTag>();
         }
     
-        public int SourceID { get; set; }
-        public string SourceName { get; set; }
-        public string URL { get; set; }
-        public Nullable<System.DateTime> Created_At { get; set; }
-        public Nullable<System.DateTime> Updated_At { get; set; }
+        public int TagId { get; set; }
+        public string TagName { get; set; }
+        public string Tagdescription { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<News> News { get; set; }
+        public virtual ICollection<NewTag> NewTags { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserTag> UserTags { get; set; }
     }
 }

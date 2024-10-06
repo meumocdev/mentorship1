@@ -1,0 +1,603 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="NewsDevModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryName" Type="nvarchar" MaxLength="255" />
+          <Property Name="ProviderId" Type="int" />
+          <Property Name="CategorySource" Type="nvarchar" MaxLength="255" />
+          <Property Name="Categoryttl" Type="int" />
+          <Property Name="Categorygenerator" Type="nvarchar" MaxLength="255" />
+          <Property Name="Categorydocs" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="ItemId" />
+          </Key>
+          <Property Name="ItemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ItemTitle" Type="nvarchar" MaxLength="255" />
+          <Property Name="ItemLink" Type="nvarchar" MaxLength="255" />
+          <Property Name="ItemGuid" Type="nvarchar" MaxLength="255" />
+          <Property Name="ItemPubDate" Type="datetime" />
+          <Property Name="ItemImage" Type="nvarchar" MaxLength="255" />
+          <Property Name="CategoryId" Type="int" />
+          <Property Name="Itemauthor" Type="nvarchar" MaxLength="255" />
+          <Property Name="Itemsummary" Type="nvarchar(max)" />
+          <Property Name="Itemcomments" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="NewTag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NewId" Type="int" />
+          <Property Name="TagId" Type="int" />
+        </EntityType>
+        <EntityType Name="Provider">
+          <Key>
+            <PropertyRef Name="ProviderId" />
+          </Key>
+          <Property Name="ProviderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProviderName" Type="nvarchar" MaxLength="255" />
+          <Property Name="ProviderSource" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="TableConfig">
+          <Key>
+            <PropertyRef Name="TableConfigId" />
+          </Key>
+          <Property Name="TableConfigId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="TableConfigMostLiked" Type="int" />
+          <Property Name="TableConfigMostRead" Type="int" />
+          <Property Name="TableConfigMostTagged" Type="int" />
+          <Property Name="TableConfigFavoriteCategory" Type="int" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="TagId" />
+          </Key>
+          <Property Name="TagId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TagName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Tagdescription" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="255" />
+          <Property Name="UserPassword" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="UserCategory">
+          <Key>
+            <PropertyRef Name="UserCategoryId" />
+          </Key>
+          <Property Name="UserCategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="CategoryId" Type="int" />
+        </EntityType>
+        <EntityType Name="UserTag">
+          <Key>
+            <PropertyRef Name="UserTagId" />
+          </Key>
+          <Property Name="UserTagId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="TagId" Type="int" />
+        </EntityType>
+        <Association Name="FK__Category__Provid__46E78A0C">
+          <End Role="Provider" Type="Self.Provider" Multiplicity="0..1" />
+          <End Role="Category" Type="Self.Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provider">
+              <PropertyRef Name="ProviderId" />
+            </Principal>
+            <Dependent Role="Category">
+              <PropertyRef Name="ProviderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Item__CategoryId__47DBAE45">
+          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="Item" Type="Self.Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="Item">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__NewTag__TagId__4AB81AF0">
+          <End Role="Tag" Type="Self.Tag" Multiplicity="0..1" />
+          <End Role="NewTag" Type="Self.NewTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tag">
+              <PropertyRef Name="TagId" />
+            </Principal>
+            <Dependent Role="NewTag">
+              <PropertyRef Name="TagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TableConf__UserI__4D94879B">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="TableConfig" Type="Self.TableConfig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="TableConfig">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserCateg__Categ__4CA06362">
+          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="UserCategory" Type="Self.UserCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="UserCategory">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserCateg__UserI__4BAC3F29">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="UserCategory" Type="Self.UserCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserCategory">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserTag__TagId__48CFD27E">
+          <End Role="Tag" Type="Self.Tag" Multiplicity="0..1" />
+          <End Role="UserTag" Type="Self.UserTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tag">
+              <PropertyRef Name="TagId" />
+            </Principal>
+            <Dependent Role="UserTag">
+              <PropertyRef Name="TagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserTag__UserId__49C3F6B7">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="UserTag" Type="Self.UserTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserTag">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NewsDevModelStoreContainer">
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NewTag" EntityType="Self.NewTag" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Provider" EntityType="Self.Provider" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableConfig" EntityType="Self.TableConfig" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tag" EntityType="Self.Tag" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserCategory" EntityType="Self.UserCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserTag" EntityType="Self.UserTag" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Category__Provid__46E78A0C" Association="Self.FK__Category__Provid__46E78A0C">
+            <End Role="Provider" EntitySet="Provider" />
+            <End Role="Category" EntitySet="Category" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Item__CategoryId__47DBAE45" Association="Self.FK__Item__CategoryId__47DBAE45">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Item" EntitySet="Item" />
+          </AssociationSet>
+          <AssociationSet Name="FK__NewTag__TagId__4AB81AF0" Association="Self.FK__NewTag__TagId__4AB81AF0">
+            <End Role="Tag" EntitySet="Tag" />
+            <End Role="NewTag" EntitySet="NewTag" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TableConf__UserI__4D94879B" Association="Self.FK__TableConf__UserI__4D94879B">
+            <End Role="User" EntitySet="User" />
+            <End Role="TableConfig" EntitySet="TableConfig" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserCateg__Categ__4CA06362" Association="Self.FK__UserCateg__Categ__4CA06362">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="UserCategory" EntitySet="UserCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserCateg__UserI__4BAC3F29" Association="Self.FK__UserCateg__UserI__4BAC3F29">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserCategory" EntitySet="UserCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserTag__TagId__48CFD27E" Association="Self.FK__UserTag__TagId__48CFD27E">
+            <End Role="Tag" EntitySet="Tag" />
+            <End Role="UserTag" EntitySet="UserTag" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserTag__UserId__49C3F6B7" Association="Self.FK__UserTag__UserId__49C3F6B7">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserTag" EntitySet="UserTag" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NewsDevModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ProviderId" Type="Int32" />
+          <Property Name="CategorySource" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Categoryttl" Type="Int32" />
+          <Property Name="Categorygenerator" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Categorydocs" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Provider" Relationship="Self.FK__Category__Provid__46E78A0C" FromRole="Category" ToRole="Provider" />
+          <NavigationProperty Name="Items" Relationship="Self.FK__Item__CategoryId__47DBAE45" FromRole="Category" ToRole="Item" />
+          <NavigationProperty Name="UserCategories" Relationship="Self.FK__UserCateg__Categ__4CA06362" FromRole="Category" ToRole="UserCategory" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="ItemId" />
+          </Key>
+          <Property Name="ItemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ItemTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ItemLink" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ItemGuid" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ItemPubDate" Type="DateTime" Precision="3" />
+          <Property Name="ItemImage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CategoryId" Type="Int32" />
+          <Property Name="Itemauthor" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Itemsummary" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Itemcomments" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Category" Relationship="Self.FK__Item__CategoryId__47DBAE45" FromRole="Item" ToRole="Category" />
+        </EntityType>
+        <EntityType Name="NewTag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NewId" Type="Int32" />
+          <Property Name="TagId" Type="Int32" />
+          <NavigationProperty Name="Tag" Relationship="Self.FK__NewTag__TagId__4AB81AF0" FromRole="NewTag" ToRole="Tag" />
+        </EntityType>
+        <EntityType Name="Provider">
+          <Key>
+            <PropertyRef Name="ProviderId" />
+          </Key>
+          <Property Name="ProviderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProviderName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ProviderSource" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Categories" Relationship="Self.FK__Category__Provid__46E78A0C" FromRole="Provider" ToRole="Category" />
+        </EntityType>
+        <EntityType Name="TableConfig">
+          <Key>
+            <PropertyRef Name="TableConfigId" />
+          </Key>
+          <Property Name="TableConfigId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="TableConfigMostLiked" Type="Int32" />
+          <Property Name="TableConfigMostRead" Type="Int32" />
+          <Property Name="TableConfigMostTagged" Type="Int32" />
+          <Property Name="TableConfigFavoriteCategory" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="Self.FK__TableConf__UserI__4D94879B" FromRole="TableConfig" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="TagId" />
+          </Key>
+          <Property Name="TagId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TagName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Tagdescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NewTags" Relationship="Self.FK__NewTag__TagId__4AB81AF0" FromRole="Tag" ToRole="NewTag" />
+          <NavigationProperty Name="UserTags" Relationship="Self.FK__UserTag__TagId__48CFD27E" FromRole="Tag" ToRole="UserTag" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UserPassword" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TableConfigs" Relationship="Self.FK__TableConf__UserI__4D94879B" FromRole="User" ToRole="TableConfig" />
+          <NavigationProperty Name="UserCategories" Relationship="Self.FK__UserCateg__UserI__4BAC3F29" FromRole="User" ToRole="UserCategory" />
+          <NavigationProperty Name="UserTags" Relationship="Self.FK__UserTag__UserId__49C3F6B7" FromRole="User" ToRole="UserTag" />
+        </EntityType>
+        <EntityType Name="UserCategory">
+          <Key>
+            <PropertyRef Name="UserCategoryId" />
+          </Key>
+          <Property Name="UserCategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="CategoryId" Type="Int32" />
+          <NavigationProperty Name="Category" Relationship="Self.FK__UserCateg__Categ__4CA06362" FromRole="UserCategory" ToRole="Category" />
+          <NavigationProperty Name="User" Relationship="Self.FK__UserCateg__UserI__4BAC3F29" FromRole="UserCategory" ToRole="User" />
+        </EntityType>
+        <EntityType Name="UserTag">
+          <Key>
+            <PropertyRef Name="UserTagId" />
+          </Key>
+          <Property Name="UserTagId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="TagId" Type="Int32" />
+          <NavigationProperty Name="Tag" Relationship="Self.FK__UserTag__TagId__48CFD27E" FromRole="UserTag" ToRole="Tag" />
+          <NavigationProperty Name="User" Relationship="Self.FK__UserTag__UserId__49C3F6B7" FromRole="UserTag" ToRole="User" />
+        </EntityType>
+        <Association Name="FK__Category__Provid__46E78A0C">
+          <End Role="Provider" Type="Self.Provider" Multiplicity="0..1" />
+          <End Role="Category" Type="Self.Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provider">
+              <PropertyRef Name="ProviderId" />
+            </Principal>
+            <Dependent Role="Category">
+              <PropertyRef Name="ProviderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Item__CategoryId__47DBAE45">
+          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="Item" Type="Self.Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="Item">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserCateg__Categ__4CA06362">
+          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="UserCategory" Type="Self.UserCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="UserCategory">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__NewTag__TagId__4AB81AF0">
+          <End Role="Tag" Type="Self.Tag" Multiplicity="0..1" />
+          <End Role="NewTag" Type="Self.NewTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tag">
+              <PropertyRef Name="TagId" />
+            </Principal>
+            <Dependent Role="NewTag">
+              <PropertyRef Name="TagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TableConf__UserI__4D94879B">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="TableConfig" Type="Self.TableConfig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="TableConfig">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserTag__TagId__48CFD27E">
+          <End Role="Tag" Type="Self.Tag" Multiplicity="0..1" />
+          <End Role="UserTag" Type="Self.UserTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tag">
+              <PropertyRef Name="TagId" />
+            </Principal>
+            <Dependent Role="UserTag">
+              <PropertyRef Name="TagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserCateg__UserI__4BAC3F29">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="UserCategory" Type="Self.UserCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserCategory">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserTag__UserId__49C3F6B7">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="UserTag" Type="Self.UserTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserTag">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NewsDevEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="Items" EntityType="Self.Item" />
+          <EntitySet Name="NewTags" EntityType="Self.NewTag" />
+          <EntitySet Name="Providers" EntityType="Self.Provider" />
+          <EntitySet Name="TableConfigs" EntityType="Self.TableConfig" />
+          <EntitySet Name="Tags" EntityType="Self.Tag" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="UserCategories" EntityType="Self.UserCategory" />
+          <EntitySet Name="UserTags" EntityType="Self.UserTag" />
+          <AssociationSet Name="FK__Category__Provid__46E78A0C" Association="Self.FK__Category__Provid__46E78A0C">
+            <End Role="Provider" EntitySet="Providers" />
+            <End Role="Category" EntitySet="Categories" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Item__CategoryId__47DBAE45" Association="Self.FK__Item__CategoryId__47DBAE45">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Item" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserCateg__Categ__4CA06362" Association="Self.FK__UserCateg__Categ__4CA06362">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="UserCategory" EntitySet="UserCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK__NewTag__TagId__4AB81AF0" Association="Self.FK__NewTag__TagId__4AB81AF0">
+            <End Role="Tag" EntitySet="Tags" />
+            <End Role="NewTag" EntitySet="NewTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TableConf__UserI__4D94879B" Association="Self.FK__TableConf__UserI__4D94879B">
+            <End Role="User" EntitySet="Users" />
+            <End Role="TableConfig" EntitySet="TableConfigs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserTag__TagId__48CFD27E" Association="Self.FK__UserTag__TagId__48CFD27E">
+            <End Role="Tag" EntitySet="Tags" />
+            <End Role="UserTag" EntitySet="UserTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserCateg__UserI__4BAC3F29" Association="Self.FK__UserCateg__UserI__4BAC3F29">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserCategory" EntitySet="UserCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserTag__UserId__49C3F6B7" Association="Self.FK__UserTag__UserId__49C3F6B7">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserTag" EntitySet="UserTags" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NewsDevModelStoreContainer" CdmEntityContainer="NewsDevEntities">
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="NewsDevModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="ProviderId" ColumnName="ProviderId" />
+                <ScalarProperty Name="CategorySource" ColumnName="CategorySource" />
+                <ScalarProperty Name="Categoryttl" ColumnName="Categoryttl" />
+                <ScalarProperty Name="Categorygenerator" ColumnName="Categorygenerator" />
+                <ScalarProperty Name="Categorydocs" ColumnName="Categorydocs" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Items">
+            <EntityTypeMapping TypeName="NewsDevModel.Item">
+              <MappingFragment StoreEntitySet="Item">
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="ItemTitle" ColumnName="ItemTitle" />
+                <ScalarProperty Name="ItemLink" ColumnName="ItemLink" />
+                <ScalarProperty Name="ItemGuid" ColumnName="ItemGuid" />
+                <ScalarProperty Name="ItemPubDate" ColumnName="ItemPubDate" />
+                <ScalarProperty Name="ItemImage" ColumnName="ItemImage" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="Itemauthor" ColumnName="Itemauthor" />
+                <ScalarProperty Name="Itemsummary" ColumnName="Itemsummary" />
+                <ScalarProperty Name="Itemcomments" ColumnName="Itemcomments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NewTags">
+            <EntityTypeMapping TypeName="NewsDevModel.NewTag">
+              <MappingFragment StoreEntitySet="NewTag">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NewId" ColumnName="NewId" />
+                <ScalarProperty Name="TagId" ColumnName="TagId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Providers">
+            <EntityTypeMapping TypeName="NewsDevModel.Provider">
+              <MappingFragment StoreEntitySet="Provider">
+                <ScalarProperty Name="ProviderId" ColumnName="ProviderId" />
+                <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
+                <ScalarProperty Name="ProviderSource" ColumnName="ProviderSource" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableConfigs">
+            <EntityTypeMapping TypeName="NewsDevModel.TableConfig">
+              <MappingFragment StoreEntitySet="TableConfig">
+                <ScalarProperty Name="TableConfigId" ColumnName="TableConfigId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="TableConfigMostLiked" ColumnName="TableConfigMostLiked" />
+                <ScalarProperty Name="TableConfigMostRead" ColumnName="TableConfigMostRead" />
+                <ScalarProperty Name="TableConfigMostTagged" ColumnName="TableConfigMostTagged" />
+                <ScalarProperty Name="TableConfigFavoriteCategory" ColumnName="TableConfigFavoriteCategory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tags">
+            <EntityTypeMapping TypeName="NewsDevModel.Tag">
+              <MappingFragment StoreEntitySet="Tag">
+                <ScalarProperty Name="TagId" ColumnName="TagId" />
+                <ScalarProperty Name="TagName" ColumnName="TagName" />
+                <ScalarProperty Name="Tagdescription" ColumnName="Tagdescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="NewsDevModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserCategories">
+            <EntityTypeMapping TypeName="NewsDevModel.UserCategory">
+              <MappingFragment StoreEntitySet="UserCategory">
+                <ScalarProperty Name="UserCategoryId" ColumnName="UserCategoryId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTags">
+            <EntityTypeMapping TypeName="NewsDevModel.UserTag">
+              <MappingFragment StoreEntitySet="UserTag">
+                <ScalarProperty Name="UserTagId" ColumnName="UserTagId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="TagId" ColumnName="TagId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -12,13 +12,14 @@ namespace newsApp.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class UserActivityLog
+    public partial class TableConfig
     {
-        public int ActivityID { get; set; }
-        public Nullable<int> UserID { get; set; }
-        public string Activity_Type { get; set; }
-        public string Description { get; set; }
-        public Nullable<System.DateTime> Created_At { get; set; }
+        public int TableConfigId { get; set; }
+        public Nullable<int> UserId { get; set; }
+        public Nullable<int> TableConfigMostLiked { get; set; }
+        public Nullable<int> TableConfigMostRead { get; set; }
+        public Nullable<int> TableConfigMostTagged { get; set; }
+        public Nullable<int> TableConfigFavoriteCategory { get; set; }
     
         public virtual User User { get; set; }
     }

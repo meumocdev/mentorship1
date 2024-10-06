@@ -12,14 +12,12 @@ namespace newsApp.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Like
+    public partial class NewTag
     {
-        public int LikeID { get; set; }
-        public Nullable<int> UserID { get; set; }
-        public Nullable<int> NewsID { get; set; }
-        public Nullable<System.DateTime> Liked_At { get; set; }
+        public int Id { get; set; }
+        public Nullable<int> NewId { get; set; }
+        public Nullable<int> TagId { get; set; }
     
-        public virtual News News { get; set; }
-        public virtual User User { get; set; }
+        public virtual Tag Tag { get; set; }
     }
 }

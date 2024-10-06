@@ -3,28 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsapp\\models\\rss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|solutionrelative:newsapp\\models\\rss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|c:\\users\\thanh tai\\desktop\\mentorship_program\\mentorship1\\[assignment 14]news\\newsapp\\newsapp\\models\\rssreaderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|solutionrelative:newsapp\\models\\rssreaderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|c:\\users\\thanh tai\\desktop\\mentorship_program\\mentorship1\\[assignment 14]news\\newsapp\\newsapp\\models\\newsaggregationmodel.context.tt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|solutionrelative:newsapp\\models\\newsaggregationmodel.context.tt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|c:\\users\\thanh tai\\desktop\\mentorship_program\\mentorship1\\[assignment 14]news\\newsapp\\newsapp\\models\\newsaggregationmodel.edmx.diagram||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|solutionrelative:newsapp\\models\\newsaggregationmodel.edmx.diagram||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|c:\\users\\thanh tai\\desktop\\mentorship_program\\mentorship1\\[assignment 14]news\\newsapp\\newsapp\\models\\newsaggregationmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
-      "RelativeMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|solutionrelative:newsapp\\models\\newsaggregationmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|c:\\users\\thanh tai\\desktop\\mentorship_program\\mentorship1\\[assignment 14]news\\newsapp\\newsapp\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|solutionrelative:newsapp\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|solutionrelative:newsapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|c:\\users\\thanh tai\\desktop\\mentorship_program\\mentorship1\\[assignment 14]news\\newsapp\\newsapp\\models\\identitymodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|solutionrelative:newsapp\\models\\identitymodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsapp\\models\\accountviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,12 +19,40 @@
       "RelativeMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|solutionrelative:newsapp\\models\\manageviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsapp\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|solutionrelative:newsapp\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|solutionrelative:newsapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsapp\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|solutionrelative:newsapp\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|c:\\users\\thanh tai\\desktop\\mentorship_program\\mentorship1\\[assignment 14]news\\newsapp\\newsapp\\controllers\\rsscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|solutionrelative:newsapp\\controllers\\rsscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|c:\\users\\thanh tai\\desktop\\mentorship_program\\mentorship1\\[assignment 14]news\\newsapp\\newsapp\\models\\rss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|solutionrelative:newsapp\\models\\rss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsapp\\models\\newsaggregationmodel.context.tt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|solutionrelative:newsapp\\models\\newsaggregationmodel.context.tt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsapp\\models\\newsaggregationmodel.edmx.diagram||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|solutionrelative:newsapp\\models\\newsaggregationmodel.edmx.diagram||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsapp\\models\\newsaggregationmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|solutionrelative:newsapp\\models\\newsaggregationmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsapp\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|solutionrelative:newsapp\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsapp\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|solutionrelative:newsapp\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{773FF4B3-1CFA-4311-877F-46E2C773088A}|newsApp\\newsApp.csproj|C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsapp\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -62,7 +74,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -75,6 +87,45 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "IdentityModels.cs",
+              "DocumentMoniker": "C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsApp\\Models\\IdentityModels.cs",
+              "RelativeDocumentMoniker": "newsApp\\Models\\IdentityModels.cs",
+              "ToolTip": "C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsApp\\Models\\IdentityModels.cs",
+              "RelativeToolTip": "newsApp\\Models\\IdentityModels.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T13:08:22.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RssController.cs",
+              "DocumentMoniker": "C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsApp\\Controllers\\RssController.cs",
+              "RelativeDocumentMoniker": "newsApp\\Controllers\\RssController.cs",
+              "ToolTip": "C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsApp\\Controllers\\RssController.cs",
+              "RelativeToolTip": "newsApp\\Controllers\\RssController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwBkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T13:06:52.073Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RssReaderService.cs",
+              "DocumentMoniker": "C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsApp\\Models\\RssReaderService.cs",
+              "RelativeDocumentMoniker": "newsApp\\Models\\RssReaderService.cs",
+              "ToolTip": "C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsApp\\Models\\RssReaderService.cs",
+              "RelativeToolTip": "newsApp\\Models\\RssReaderService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAD8AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T13:02:04.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "newsaggregationModel.Context.tt",
               "DocumentMoniker": "C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsApp\\Models\\newsaggregationModel.Context.tt",
               "RelativeDocumentMoniker": "newsApp\\Models\\newsaggregationModel.Context.tt",
@@ -82,12 +133,11 @@
               "RelativeToolTip": "newsApp\\Models\\newsaggregationModel.Context.tt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-10-03T12:43:33.642Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-03T12:43:33.642Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "newsaggregationModel.edmx.diagram",
               "DocumentMoniker": "C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsApp\\Models\\newsaggregationModel.edmx.diagram",
               "RelativeDocumentMoniker": "newsApp\\Models\\newsaggregationModel.edmx.diagram",
@@ -95,24 +145,22 @@
               "RelativeToolTip": "newsApp\\Models\\newsaggregationModel.edmx.diagram",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-10-03T12:42:45.77Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-03T12:42:45.77Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "newsaggregationModel.edmx [Diagram1]",
               "DocumentMoniker": "C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsApp\\Models\\newsaggregationModel.edmx",
               "RelativeDocumentMoniker": "newsApp\\Models\\newsaggregationModel.edmx",
               "ToolTip": "C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsApp\\Models\\newsaggregationModel.edmx [Diagram1]",
               "RelativeToolTip": "newsApp\\Models\\newsaggregationModel.edmx [Diagram1]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
-              "WhenOpened": "2024-10-03T12:42:40.397Z",
-              "EditorCaption": " [Diagram1]"
+              "WhenOpened": "2024-10-03T12:42:40.397Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsApp\\Models\\User.cs",
               "RelativeDocumentMoniker": "newsApp\\Models\\User.cs",
@@ -120,12 +168,11 @@
               "RelativeToolTip": "newsApp\\Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T13:49:26.491Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-01T13:49:26.491Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsApp\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "newsApp\\Controllers\\AccountController.cs",
@@ -133,25 +180,24 @@
               "RelativeToolTip": "newsApp\\Controllers\\AccountController.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAuwAgAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T13:43:16.371Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-01T13:43:16.371Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsApp\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "newsApp\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsApp\\Controllers\\HomeController.cs",
               "RelativeToolTip": "newsApp\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA8wBIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-01T13:43:05.633Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 5,
               "Title": "About.cshtml",
               "DocumentMoniker": "C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsApp\\Views\\Home\\About.cshtml",
               "RelativeDocumentMoniker": "newsApp\\Views\\Home\\About.cshtml",
@@ -164,7 +210,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "Comment.cs",
               "DocumentMoniker": "C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsApp\\Models\\Comment.cs",
               "RelativeDocumentMoniker": "newsApp\\Models\\Comment.cs",
@@ -172,12 +218,11 @@
               "RelativeToolTip": "newsApp\\Models\\Comment.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T09:01:21.223Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-01T09:01:21.223Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "ManageViewModels.cs",
               "DocumentMoniker": "C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsApp\\Models\\ManageViewModels.cs",
               "RelativeDocumentMoniker": "newsApp\\Models\\ManageViewModels.cs",
@@ -190,20 +235,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "RSS.cs",
               "DocumentMoniker": "C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsApp\\Models\\RSS.cs",
               "RelativeDocumentMoniker": "newsApp\\Models\\RSS.cs",
               "ToolTip": "C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsApp\\Models\\RSS.cs",
               "RelativeToolTip": "newsApp\\Models\\RSS.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAB4AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAuwB4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-01T08:56:51.313Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "View.cs",
               "DocumentMoniker": "C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsApp\\Models\\View.cs",
               "RelativeDocumentMoniker": "newsApp\\Models\\View.cs",
@@ -211,12 +256,11 @@
               "RelativeToolTip": "newsApp\\Models\\View.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T08:56:07.342Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-01T08:56:07.342Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "Data.cs",
               "DocumentMoniker": "C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsApp\\Models\\Data.cs",
               "RelativeDocumentMoniker": "newsApp\\Models\\Data.cs",
@@ -224,12 +268,11 @@
               "RelativeToolTip": "newsApp\\Models\\Data.cs",
               "ViewState": "AgIAAG4AAAAAAAAAAAAAAHgAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T08:38:49.663Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-01T08:38:49.663Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "AccountViewModels.cs",
               "DocumentMoniker": "C:\\Users\\THANH TAI\\Desktop\\Mentorship_Program\\mentorship1\\[Assignment 14]News\\newsApp\\newsApp\\Models\\AccountViewModels.cs",
               "RelativeDocumentMoniker": "newsApp\\Models\\AccountViewModels.cs",

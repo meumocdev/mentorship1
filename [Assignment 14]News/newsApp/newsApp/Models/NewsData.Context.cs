@@ -13,10 +13,10 @@ namespace newsApp.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class newsaggregationEntities : DbContext
+    public partial class NewsDevEntities : DbContext
     {
-        public newsaggregationEntities()
-            : base("name=newsaggregationEntities")
+        public NewsDevEntities()
+            : base("name=NewsDevEntities")
         {
         }
     
@@ -26,15 +26,13 @@ namespace newsApp.Models
         }
     
         public virtual DbSet<Category> Categories { get; set; }
-        public virtual DbSet<Comment> Comments { get; set; }
-        public virtual DbSet<Like> Likes { get; set; }
-        public virtual DbSet<News> News { get; set; }
-        public virtual DbSet<Notification> Notifications { get; set; }
-        public virtual DbSet<RSS> RSSes { get; set; }
+        public virtual DbSet<Item> Items { get; set; }
+        public virtual DbSet<NewTag> NewTags { get; set; }
+        public virtual DbSet<Provider> Providers { get; set; }
+        public virtual DbSet<TableConfig> TableConfigs { get; set; }
+        public virtual DbSet<Tag> Tags { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<View> Views { get; set; }
-        public virtual DbSet<UserActivityLog> UserActivityLogs { get; set; }
-        public virtual DbSet<UserPreference> UserPreferences { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<UserCategory> UserCategories { get; set; }
+        public virtual DbSet<UserTag> UserTags { get; set; }
     }
 }

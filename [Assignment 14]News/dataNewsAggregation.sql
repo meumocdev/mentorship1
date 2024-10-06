@@ -1,123 +1,103 @@
-Create database newsaggregation
-drop database newsaggregation
-use newsaggregation
-use BanHang
-CREATE TABLE [User] (
-  [UserID] int PRIMARY KEY,
-  [Username] nvarchar UNIQUE,
-  [UserPassword] nvarchar,
-  [Email] nvarchar UNIQUE,
-  [Role] nvarchar,
-  [Preferences] nvarchar,
-  [Created_At] datetime,
-  [Updated_At] datetime,
-  [Last_Login] datetime
-)
-GO
+Create database NewsDev
+use NewsDev
 
-CREATE TABLE [News] (
-  [NewsID] int PRIMARY KEY,
-  [Title] nvarchar,
-  [Description] text,
-  [Tag] nvarchar,
-  [Created_At] datetime,
-  [Updated_At] datetime,
-  [CategoryID] int,
-  [Author] nvarchar,
-  [Image_URL] nvarchar,
-  [Language] nvarchar,
-  [Content] text,
-  [Views] int,
-  [Likes] int,
-  [SourceID] int,
-  [Status] nvarchar
-)
-GO
-
-CREATE TABLE [RSS] (
-  [SourceID] int PRIMARY KEY,
-  [SourceName] nvarchar,
-  [URL] nvarchar,
-  [Fetch_Interval] int,
-  [Created_At] datetime,
-  [Updated_At] datetime,
-  [Status] nvarchar,
-  [Language] nvarchar,
-  [Country] nvarchar
+CREATE TABLE [Provider] (
+  [ProviderId] INT PRIMARY KEY IDENTITY(1, 1),
+  [ProviderName] NVARCHAR(255),
+  [ProviderSource] NVARCHAR(255)
 )
 GO
 
 CREATE TABLE [Category] (
-  [CategoryID] int PRIMARY KEY,
-  [CategoryName] nvarchar,
-  [Description] text,
-  [Created_At] datetime,
-  [Updated_At] datetime
+  [CategoryId] INT PRIMARY KEY IDENTITY(1, 1),
+  [CategoryName] NVARCHAR(255),
+  [ProviderId] INT,
+  [CategorySource] NVARCHAR(255),
+  [Categoryttl] INT,
+  [Categorygenerator] NVARCHAR(255),
+  [Categorydocs] NVARCHAR(255)
 )
 GO
 
-CREATE TABLE [Comments] (
-  [CommentID] int PRIMARY KEY,
-  [UserID] int,
-  [NewsID] int,
-  [Content] text,
-  [Created_At] datetime,
-  [Updated_At] datetime,
-  [Likes] int,
-  [Status] nvarchar
+CREATE TABLE [Item] (
+  [ItemId] INT PRIMARY KEY IDENTITY(1, 1),
+  [ItemTitle] NVARCHAR(255),
+  [ItemLink] NVARCHAR(255),
+  [ItemGuid] NVARCHAR(255),
+  [ItemPubDate] DATETIME,
+  [ItemImage] NVARCHAR(255),
+  [CategoryId] INT,
+  [Itemauthor] NVARCHAR(255),
+  [Itemsummary] NVARCHAR(MAX),
+  [Itemcomments] NVARCHAR(255)
 )
 GO
 
-CREATE TABLE [Likes] (
-  [LikeID] int PRIMARY KEY,
-  [UserID] int,
-  [NewsID] int,
-  [Liked_At] datetime
+CREATE TABLE [Tag] (
+  [TagId] INT PRIMARY KEY IDENTITY(1, 1),
+  [TagName] NVARCHAR(255),
+  [Tagdescription] NVARCHAR(255)
 )
 GO
 
-CREATE TABLE [Views] (
-  [ViewID] int PRIMARY KEY,
-  [UserID] int,
-  [NewsID] int,
-  [Viewed_At] datetime,
-  [IP_Address] nvarchar
+CREATE TABLE [NewTag] (
+  [Id] INT PRIMARY KEY IDENTITY(1, 1),
+  [NewId] INT,
+  [TagId] INT
 )
 GO
 
-CREATE TABLE [Notification] (
-  [NotificationID] int PRIMARY KEY,
-  [UserID] int,
-  [Type] nvarchar,
-  [Message] nvarchar,
-  [Is_Read] bit,
-  [Created_At] datetime
+CREATE TABLE [User] (
+  [UserId] INT PRIMARY KEY IDENTITY(1, 1),
+  [UserName] NVARCHAR(255),
+  [UserPassword] varchar(255)
 )
 GO
 
-ALTER TABLE [News] ADD FOREIGN KEY ([CategoryID]) REFERENCES [Category] ([CategoryID])
+CREATE TABLE [UserCategory] (
+  [UserCategoryId] INT PRIMARY KEY IDENTITY(1, 1),
+  [UserId] INT,
+  [CategoryId] INT
+)
 GO
 
-ALTER TABLE [News] ADD FOREIGN KEY ([SourceID]) REFERENCES [RSS] ([SourceID])
+CREATE TABLE [UserTag] (
+  [UserTagId] INT PRIMARY KEY IDENTITY(1, 1),
+  [UserId] INT,
+  [TagId] INT
+)
 GO
 
-ALTER TABLE [Comments] ADD FOREIGN KEY ([UserID]) REFERENCES [User] ([UserID])
+CREATE TABLE [TableConfig] (
+  [TableConfigId] INT PRIMARY KEY IDENTITY(1, 1),
+  [UserId] INT,
+  [TableConfigMostLiked] INT,
+  [TableConfigMostRead] INT,
+  [TableConfigMostTagged] INT,
+  [TableConfigFavoriteCategory] INT
+)
 GO
 
-ALTER TABLE [Comments] ADD FOREIGN KEY ([NewsID]) REFERENCES [News] ([NewsID])
+ALTER TABLE [Category] ADD FOREIGN KEY ([ProviderId]) REFERENCES [Provider] ([ProviderId])
 GO
 
-ALTER TABLE [Likes] ADD FOREIGN KEY ([UserID]) REFERENCES [User] ([UserID])
+ALTER TABLE [Item] ADD FOREIGN KEY ([CategoryId]) REFERENCES [Category] ([CategoryId])
 GO
 
-ALTER TABLE [Likes] ADD FOREIGN KEY ([NewsID]) REFERENCES [News] ([NewsID])
+ALTER TABLE [UserTag] ADD FOREIGN KEY ([TagId]) REFERENCES [Tag] ([TagId])
 GO
 
-ALTER TABLE [Views] ADD FOREIGN KEY ([UserID]) REFERENCES [User] ([UserID])
+ALTER TABLE [UserTag] ADD FOREIGN KEY ([UserId]) REFERENCES [User] ([UserId])
 GO
 
-ALTER TABLE [Views] ADD FOREIGN KEY ([NewsID]) REFERENCES [News] ([NewsID])
+ALTER TABLE [NewTag] ADD FOREIGN KEY ([TagId]) REFERENCES [Tag] ([TagId])
 GO
 
-ALTER TABLE [Notification] ADD FOREIGN KEY ([UserID]) REFERENCES [User] ([UserID])
+ALTER TABLE [UserCategory] ADD FOREIGN KEY ([UserId]) REFERENCES [User] ([UserId])
+GO
+
+ALTER TABLE [UserCategory] ADD FOREIGN KEY ([CategoryId]) REFERENCES [Category] ([CategoryId])
+GO
+
+ALTER TABLE [TableConfig] ADD FOREIGN KEY ([UserId]) REFERENCES [User] ([UserId])
 GO

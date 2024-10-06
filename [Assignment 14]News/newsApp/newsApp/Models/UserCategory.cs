@@ -12,12 +12,13 @@ namespace newsApp.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagram
+    public partial class UserCategory
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int UserCategoryId { get; set; }
+        public Nullable<int> UserId { get; set; }
+        public Nullable<int> CategoryId { get; set; }
+    
+        public virtual Category Category { get; set; }
+        public virtual User User { get; set; }
     }
 }

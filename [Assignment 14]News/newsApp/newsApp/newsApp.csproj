@@ -204,56 +204,50 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs">
-      <DependentUpon>newsaggregationModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Comment.cs">
-      <DependentUpon>newsaggregationModel.tt</DependentUpon>
+      <DependentUpon>NewsData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Data.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Like.cs">
-      <DependentUpon>newsaggregationModel.tt</DependentUpon>
+    <Compile Include="Models\Item.cs">
+      <DependentUpon>NewsData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\News.cs">
-      <DependentUpon>newsaggregationModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\newsaggregationModel.Context.cs">
+    <Compile Include="Models\NewsData.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>newsaggregationModel.Context.tt</DependentUpon>
+      <DependentUpon>NewsData.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\newsaggregationModel.cs">
+    <Compile Include="Models\NewsData.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>newsaggregationModel.tt</DependentUpon>
+      <DependentUpon>NewsData.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\newsaggregationModel.Designer.cs">
+    <Compile Include="Models\NewsData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>newsaggregationModel.edmx</DependentUpon>
+      <DependentUpon>NewsData.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Notification.cs">
-      <DependentUpon>newsaggregationModel.tt</DependentUpon>
+    <Compile Include="Models\NewTag.cs">
+      <DependentUpon>NewsData.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\RSS.cs">
-      <DependentUpon>newsaggregationModel.tt</DependentUpon>
+    <Compile Include="Models\Provider.cs">
+      <DependentUpon>NewsData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RssReaderService.cs" />
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>newsaggregationModel.tt</DependentUpon>
+    <Compile Include="Models\TableConfig.cs">
+      <DependentUpon>NewsData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tag.cs">
+      <DependentUpon>NewsData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs">
-      <DependentUpon>newsaggregationModel.tt</DependentUpon>
+      <DependentUpon>NewsData.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\UserActivityLog.cs">
-      <DependentUpon>newsaggregationModel.tt</DependentUpon>
+    <Compile Include="Models\UserCategory.cs">
+      <DependentUpon>NewsData.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\UserPreference.cs">
-      <DependentUpon>newsaggregationModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\View.cs">
-      <DependentUpon>newsaggregationModel.tt</DependentUpon>
+    <Compile Include="Models\UserTag.cs">
+      <DependentUpon>NewsData.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -278,15 +272,15 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\newsaggregationModel.Context.tt">
+    <Content Include="Models\NewsData.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>newsaggregationModel.edmx</DependentUpon>
-      <LastGenOutput>newsaggregationModel.Context.cs</LastGenOutput>
+      <DependentUpon>NewsData.edmx</DependentUpon>
+      <LastGenOutput>NewsData.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\newsaggregationModel.tt">
+    <Content Include="Models\NewsData.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>newsaggregationModel.edmx</DependentUpon>
-      <LastGenOutput>newsaggregationModel.cs</LastGenOutput>
+      <DependentUpon>NewsData.edmx</DependentUpon>
+      <LastGenOutput>NewsData.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -294,12 +288,12 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\newsaggregationModel.edmx">
+    <EntityDeploy Include="Models\NewsData.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>newsaggregationModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>NewsData.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\newsaggregationModel.edmx.diagram">
-      <DependentUpon>newsaggregationModel.edmx</DependentUpon>
+    <Content Include="Models\NewsData.edmx.diagram">
+      <DependentUpon>NewsData.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.7.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />

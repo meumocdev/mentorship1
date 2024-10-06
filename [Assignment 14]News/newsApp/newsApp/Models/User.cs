@@ -17,35 +17,20 @@ namespace newsApp.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
-            this.Comments = new HashSet<Comment>();
-            this.Likes = new HashSet<Like>();
-            this.Notifications = new HashSet<Notification>();
-            this.Views = new HashSet<View>();
-            this.UserActivityLogs = new HashSet<UserActivityLog>();
-            this.UserPreferences = new HashSet<UserPreference>();
+            this.TableConfigs = new HashSet<TableConfig>();
+            this.UserCategories = new HashSet<UserCategory>();
+            this.UserTags = new HashSet<UserTag>();
         }
     
-        public int UserID { get; set; }
-        public string Username { get; set; }
+        public int UserId { get; set; }
+        public string UserName { get; set; }
         public string UserPassword { get; set; }
-        public string Email { get; set; }
-        public string Role { get; set; }
-        public string Preferences { get; set; }
-        public Nullable<System.DateTime> Created_At { get; set; }
-        public Nullable<System.DateTime> Updated_At { get; set; }
-        public Nullable<System.DateTime> Last_Login { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<TableConfig> TableConfigs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Like> Likes { get; set; }
+        public virtual ICollection<UserCategory> UserCategories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Notification> Notifications { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<View> Views { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserActivityLog> UserActivityLogs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserPreference> UserPreferences { get; set; }
+        public virtual ICollection<UserTag> UserTags { get; set; }
     }
 }

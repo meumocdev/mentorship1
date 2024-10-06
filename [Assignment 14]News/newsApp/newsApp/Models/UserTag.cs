@@ -12,15 +12,13 @@ namespace newsApp.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Notification
+    public partial class UserTag
     {
-        public int NotificationID { get; set; }
-        public Nullable<int> UserID { get; set; }
-        public string Type { get; set; }
-        public string Message { get; set; }
-        public Nullable<bool> Is_Read { get; set; }
-        public Nullable<System.DateTime> Created_At { get; set; }
+        public int UserTagId { get; set; }
+        public Nullable<int> UserId { get; set; }
+        public Nullable<int> TagId { get; set; }
     
+        public virtual Tag Tag { get; set; }
         public virtual User User { get; set; }
     }
 }

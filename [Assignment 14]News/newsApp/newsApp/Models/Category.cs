@@ -17,16 +17,22 @@ namespace newsApp.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Category()
         {
-            this.News = new HashSet<News>();
+            this.Items = new HashSet<Item>();
+            this.UserCategories = new HashSet<UserCategory>();
         }
     
-        public int CategoryID { get; set; }
+        public int CategoryId { get; set; }
         public string CategoryName { get; set; }
-        public string Description { get; set; }
-        public Nullable<System.DateTime> Created_At { get; set; }
-        public Nullable<System.DateTime> Updated_At { get; set; }
+        public Nullable<int> ProviderId { get; set; }
+        public string CategorySource { get; set; }
+        public Nullable<int> Categoryttl { get; set; }
+        public string Categorygenerator { get; set; }
+        public string Categorydocs { get; set; }
     
+        public virtual Provider Provider { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<News> News { get; set; }
+        public virtual ICollection<Item> Items { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserCategory> UserCategories { get; set; }
     }
 }
